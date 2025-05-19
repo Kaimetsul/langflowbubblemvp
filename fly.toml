@@ -7,17 +7,22 @@ app = 'langflowbubblemvp'
 primary_region = 'lhr'
 
 [build]
+  dockerfile = "Dockerfile"
 
 [http_service]
   internal_port = 8080
   force_https = true
-  auto_stop_machines = 'stop'
+  auto_stop_machines = true
   auto_start_machines = true
   min_machines_running = 0
   processes = ['app']
 
 [[vm]]
-  memory = '2gb'
   cpu_kind = 'shared'
   cpus = 1
-  memory_mb = 2_048
+  memory = '3gb'
+  memory_mb = 3_072
+
+[[mounts]]
+  source = "langflow_data"
+  destination = "/app/data"
