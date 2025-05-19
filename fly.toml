@@ -20,5 +20,5 @@ primary_region = 'lhr'
 [[vm]]
   cpu_kind = 'shared'
   cpus = 1
-  memory = '3gb'
-  memory_mb = 3_072
+  memory = '2gb'
+  memory_mb = 2_048
