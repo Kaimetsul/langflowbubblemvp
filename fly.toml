@@ -1,0 +1,33 @@
+app = "langflowbubblemvp"
+primary_region = "lax"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "7860"
+  HOST = "0.0.0.0"
+  LANGFLOW_FLOWS_DIR = "/app/flows"
+  LANGFLOW_MEMORY_LIMIT = "3GB"
+
+[http_service]
+  internal_port = 7860
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+  [[http_service.checks]]
+    interval = "30s"
+    timeout = "5s"
+    grace_period = "30s"
+    method = "GET"
+    path = "/"
+    protocol = "http"
+    tls_skip_verify = true
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 3072 
