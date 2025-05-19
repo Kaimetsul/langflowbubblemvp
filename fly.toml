@@ -24,5 +24,9 @@ primary_region = 'lhr'
   memory_mb = 3_072
 
 [[mounts]]
-  source = "langflow_data"
+  source = "langflow_data_1"
   destination = "/app/data"
+
+[[mounts]]
+  source = "langflow_data_2"
+  destination = "/app/data_backup"
