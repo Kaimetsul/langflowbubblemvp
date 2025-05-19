@@ -22,7 +22,3 @@ primary_region = 'lhr'
   cpus = 1
   memory = '3gb'
   memory_mb = 3_072
-
-[[mounts]]
-  source = "langflow_storage"
-  destination = "/app/data"
