@@ -1,0 +1,18 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "langflow run --host 0.0.0.0 --port 8080 --log-level debug"
+healthcheckPath = "/"
+healthcheckTimeout = 100
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
+
+[deploy.env]
+PORT = "8080"
+HOST = "0.0.0.0"
+LANGFLOW_MEMORY_LIMIT = "3GB"
+LANGFLOW_FLOWS_DIR = "/app/data/flows"
+LANGFLOW_SETTINGS_DIR = "/app/data/settings"
+LANGFLOW_LOG_LEVEL = "DEBUG" 
