@@ -8,7 +8,8 @@ RUN mkdir -p /app/data/settings
 WORKDIR /app
 
 # Install required packages
-RUN pip install langchain-astradb
+RUN pip install --upgrade pip && \
+    pip install langchain-astradb cassio cassandra-driver
 
 # Set environment variables
 ENV PORT=8080
