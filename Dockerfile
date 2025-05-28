@@ -7,6 +7,9 @@ RUN mkdir -p /app/data/settings
 # Set working directory
 WORKDIR /app
 
+# Install required packages
+RUN pip install langchain-astradb
+
 # Set environment variables
 ENV PORT=8080
 ENV HOST=0.0.0.0
