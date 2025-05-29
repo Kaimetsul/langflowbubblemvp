@@ -15,4 +15,8 @@ HOST = "0.0.0.0"
 LANGFLOW_MEMORY_LIMIT = "3GB"
 LANGFLOW_FLOWS_DIR = "/app/data/flows"
 LANGFLOW_SETTINGS_DIR = "/app/data/settings"
-LANGFLOW_LOG_LEVEL = "DEBUG" 
+LANGFLOW_LOG_LEVEL = "DEBUG"
+
+[[deploy.volumes]]
+source = "langflow-data"
+target = "/app/data" 
